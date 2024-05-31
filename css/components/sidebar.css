@@ -22,44 +22,11 @@
     color: #eee;
 }
 
-#sidebar a.active,
 #sidebar a:hover {
     background-color: #333;
-}
-
-#main-content {
-    margin-left: 200px; 
 }
 
 /* Optional: Style the Home link */
 #sidebar li:first-child a { 
     font-weight: bold;
-}
-
-/* Overlay Styles */
-.content-section {
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);  
-    display: none;      /* Hidden by default */
-    z-index: 10;   
-}
-
-.content-section.show { /* Use a different class to show the overlay */
-    display: block; 
-}
-
-.close-overlay {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 8px 12px;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }

@@ -1,21 +1,20 @@
 /* css/style.css */
 body {
-	background-color: black !important;
     font-family: sans-serif;
     margin: 0;
     color: #eee;
     background-image: url('../wallpaper1.jpg'); 
-    background-size: cover;
+    background-size: cover;  
 }
 
 #main-content { 
     display: flex;
     flex-direction: column; 
-    /* justify-content: center;  Remove vertical centering */ 
-    align-items: center;      /* Keep horizontal centering */
+    align-items: center;     
     height: calc(100vh - 60px);  
     padding: 20px; 
     margin-top: 60px; 
+    margin-left: 200px; /* Add margin for sidebar */
 }
 
 #app-title { 
