@@ -1,57 +1,39 @@
-/* style.css */
+/* style.css - Add these styles */
+
+#sidebar {
+    position: fixed; /* Keep the sidebar in place */
+    top: 0;
+    left: 0;
+    width: 200px; /* Adjust width as needed */
+    height: 100%;
+    background-color: #222; /* Dark background */
+    color: #eee;
+    padding: 20px;
+}
+
+#sidebar h2 {
+    margin-top: 0; /* Remove default margin */
+}
+
+#sidebar ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+#sidebar li a {
+    display: block;  /* Make the links fill the space */
+    padding: 10px;
+    text-decoration: none; 
+    color: #eee;
+}
+
+#sidebar li a.active, /* Style for active link */
+#sidebar li a:hover {
+    background-color: #333; 
+}
+
+/* Adjust tech-tree-container position */
 #tech-tree-container {
-  position: relative; /* Allow for tooltip positioning */
-  width: 100%;
-  height: 800px;
-  background-color: #121212; /* Dark background */
-  overflow: auto;  /* Add scrolling if needed */
-}
-
-.tech-tree-background {
-  background-image: url("images/tech-tree-bg.png"); /* The ornate background */
-  background-size: cover; /* Or 'contain' depending on your image */
-  width: 100%;
-  height: 100%;
-  position: absolute; /* For layering */
-  z-index: -1; /* Background behind nodes */
-}
-
-.node {
-  background-color: #222; /* Dark node background */
-  border: 2px solid #444; /* Subtle border */
-  padding: 10px;
-  border-radius: 5px; 
-  cursor: pointer;
-}
-
-.node.category { /* Style for category nodes */
-  background-color: #333; /* Slightly lighter */
-  font-size: 1.2em;
-}
-
-.node img {  /* For the tech icons */
-  width: 32px; 
-  height: 32px;
-  margin-right: 5px;
-  vertical-align: middle;
-}
-
-.link {
-  stroke: gold;
-  stroke-width: 2px;
-}
-
-.tooltip { 
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #eee;
-  padding: 8px 12px;
-  border-radius: 4px;
-  pointer-events: none; /* Prevent tooltips from blocking events */
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.2s ease-in-out;
-}
-
-.node:hover .tooltip { 
-  opacity: 1;
+    margin-left: 200px; /* Account for the sidebar width */
+    /* ... rest of your tech-tree-container styles */
 }
