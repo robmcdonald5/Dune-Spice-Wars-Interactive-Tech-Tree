@@ -26,8 +26,14 @@
 #sidebar a:hover {
     background-color: #333;
 }
+
 /* Add margin to the right to avoid overlapping */
 #main-content {
     margin-left: 200px; 
     /* ... your existing main-content styles */
+}
+
+/* Optional: Style the Home link */
+#sidebar li:first-child a { /* Targets the first list item's link */
+    font-weight: bold;
 }
