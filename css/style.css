@@ -2,9 +2,11 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #121212; /* Dark background */
-    color: #eee; 
-}
+    background-color: #121212; /* Dark background - you can remove this line */
+    color: #eee;
+    background-image: url('../wallpaper1.jpg'); /* Add this line */
+    background-size: cover;  /* Adjust as needed (cover, contain, etc.) */
+} 
 
 #main-content {
     padding: 20px;
