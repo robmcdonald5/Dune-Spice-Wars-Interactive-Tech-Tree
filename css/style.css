@@ -1,39 +1,12 @@
-/* style.css - Add these styles */
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #121212; /* Dark background */
+    color: #eee; 
+}
 
-#sidebar {
-    position: fixed; /* Keep the sidebar in place */
-    top: 0;
-    left: 0;
-    width: 200px; /* Adjust width as needed */
-    height: 100%;
-    background-color: #222; /* Dark background */
-    color: #eee;
+#main-content {
     padding: 20px;
-}
-
-#sidebar h2 {
-    margin-top: 0; /* Remove default margin */
-}
-
-#sidebar ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0;
-}
-
-#sidebar li a {
-    display: block;  /* Make the links fill the space */
-    padding: 10px;
-    text-decoration: none; 
-    color: #eee;
-}
-
-#sidebar li a.active, /* Style for active link */
-#sidebar li a:hover {
-    background-color: #333; 
-}
-
-/* Adjust tech-tree-container position */
-#tech-tree-container {
-    margin-left: 200px; /* Account for the sidebar width */
-    /* ... rest of your tech-tree-container styles */
+    margin-top: 60px; /* Adjust based on your navigation height */
 }
