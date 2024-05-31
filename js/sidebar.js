@@ -1,28 +1,34 @@
-// js/sidebar.js
+// js/sidebar.js 
 document.addEventListener('DOMContentLoaded', () => {
     const sidebarLinks = document.querySelectorAll('#sidebar a');
+    const contentSections = document.querySelectorAll('.content-section');
+    const closeButtons = document.querySelectorAll('.close-overlay');
 
     sidebarLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
 
-            const targetId = link.getAttribute('data-target');
-            const contentSections = document.querySelectorAll('.content-section');
+            if (link.getAttribute('href') === 'index.html') {
+                return;
+            }
 
-            // Remove active class from all links
-            sidebarLinks.forEach(l => l.classList.remove('active'));
-
-            // Add active class to clicked link
-            link.classList.add('active');
-
-            // Show the target section, hide others
+            // Hide all content sections
             contentSections.forEach(section => {
-                if (section.id === targetId) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
+                section.classList.remove('show');
             });
+
+            const targetId = link.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+
+            // Show the targeted content section
+            targetSection.classList.add('show');
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Hide the parent content section
+            button.closest('.content-section').classList.remove('show');
         });
     });
 });
