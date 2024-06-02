@@ -11,7 +11,8 @@
     <header>
         <div class="container"> 
             <a href="index.html" id="home-button">Back to Main Guide</a> 
-            <h1 class="page-title">House Atreides</h1>  </h1> </div>
+            <h1 class="page-title">House Atreides</h1> 
+        </div>
     </header>
 
     <main class="main-content"> 
@@ -32,8 +33,69 @@
             <div id="tech-tree-overlay" class="overlay">
                 <div class="overlay-content">
                     <span class="close-button" onclick="closeOverlay('tech-tree-overlay')">×</span>
-                    <h2>Tech Tree Content</h2>
-                    <p>This is where the Atreides Tech Tree information will go.</p>
+                    <h2>Tech Tree</h2>
+                    <div class="tech-tree">
+                        <div class="tech-column">
+                            <div class="tech-node economy" data-tech-info="Info about Local Community">
+                                Local Community
+                            </div>
+                            <div class="tech-node economy" data-tech-info="Info about Modular Parts">
+                                Modular Parts
+                            </div>
+                            <div class="tech-node economy" data-tech-info="Info about CHOAM Integration">
+                                CHOAM Integration
+                            </div>
+                            <div class="tech-node economy" data-tech-info="Info about Atreides Foremen">
+                                Atreides Foremen
+                            </div>
+                        </div>
+                        <div class="tech-column">
+                            <div class="tech-node economy" data-tech-info="Info about Urban Planning">
+                                Urban Planning
+                            </div>
+                            <div class="tech-node economy" data-tech-info="Info about Insulated Valley">
+                                Insulated Valley
+                            </div>
+                            <div class="tech-node economy" data-tech-info="Info about CHOAM Support">
+                                CHOAM Support
+                            </div>
+                        </div>
+                        <div class="tech-column">
+                            <div class="tech-node military" data-tech-info="Info about Survival Training">
+                                Survival Training
+                            </div>
+                            <div class="tech-node military" data-tech-info="Info about Army Logistics">
+                                Army Logistics
+                            </div>
+                            <div class="tech-node military" data-tech-info="Info about Mechanization">
+                                Mechanization
+                            </div>
+                            <div class="tech-node military" data-tech-info="Info about Energy Efficiency">
+                                Energy Efficiency
+                            </div>
+                            <div class="tech-node military" data-tech-info="Info about Parts Production">
+                                Parts Production
+                            </div>
+                        </div>
+                        <div class="tech-column">
+                            <div class="tech-node authority" data-tech-info="Info about Local Dialect Studies">
+                                Local Dialect Studies
+                            </div>
+                            <div class="tech-node authority" data-tech-info="Info about Lay of the Land">
+                                Lay of the Land
+                            </div>
+                            <div class="tech-node authority" data-tech-info="Info about Air Network">
+                                Air Network
+                            </div>
+                            <div class="tech-node authority" data-tech-info="Info about Veteran Militia">
+                                Veteran Militia
+                            </div>
+                            <div class="tech-node authority" data-tech-info="Info about Border Defense">
+                                Border Defense
+                            </div>
+                        </div>
+
+                        </div>
                 </div>
             </div>
 
@@ -63,5 +125,34 @@
     </footer>
 
     <script src="js/atreides.js"></script>
+    <script>
+        // Get all tech nodes
+        const techNodes = document.querySelectorAll('.tech-node');
+
+        // Function to show tooltip
+        function showTooltip(event) {
+            const node = event.target;
+            const info = node.getAttribute('data-tech-info');
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = info;
+            node.appendChild(tooltip);
+        }
+
+        // Function to hide tooltip
+        function hideTooltip(event) {
+            const node = event.target;
+            const tooltip = node.querySelector('.tooltip');
+            if (tooltip) {
+                node.removeChild(tooltip);
+            }
+        }
+
+        // Add event listeners to each node
+        techNodes.forEach(node => {
+            node.addEventListener('mouseover', showTooltip);
+            node.addEventListener('mouseout', hideTooltip);
+        });
+    </script>
 </body>
 </html>

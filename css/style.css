@@ -113,3 +113,65 @@ footer {
     cursor: pointer;
     color: #aaa; 
 }
+
+/* Tech Tree Styles */
+.tech-tree {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.tech-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.tech-node {
+    width: 150px; /* Adjust as needed */
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #6C4A4A; /* Adjust color as needed */
+    border-radius: 5px;
+    text-align: center;
+    background-color: #1E1E1E; 
+    color: #e2d4c7;
+    position: relative; /* For tooltip positioning */
+    cursor: pointer;
+}
+
+.tech-node.economy {
+    border-color: #C8B73A; /* Yellow */
+}
+
+.tech-node.military {
+    border-color: #C2472E; /* Red */
+}
+
+.tech-node.politics {
+    border-color: #4682B4; /* Blue */
+}
+
+.tech-node.authority {
+    border-color: #5F9E4E; /* Green */
+}
+.tooltip {
+    position: absolute;
+    top: 100%; /* Position below the tech node */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip horizontally */
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    z-index: 1001; /* Ensure tooltip is above other elements */
+    visibility: hidden; /* Tooltip is hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tech-node:hover .tooltip {
+    visibility: visible; /* Tooltip becomes visible on hover */
+    opacity: 1;
+}
