@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Atreides - Dune Spice Wars Interactive Guide</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/atreides.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container"> 
             <a href="index.html" id="home-button">Back to Main Guide</a> 
-            <h1>House Atreides</h1> 
-        </div>
+            <h1 class="page-title">House Atreides</h1>  </h1> </div>
     </header>
 
-    <main>
+    <main class="main-content"> 
         <div class="container">
             <nav id="atreides-navigation">
                 <ul>
-                    <li><a href="#tech-tree">Tech Tree</a></li>
-                    <li><a href="#units">Units</a></li>
-                    <li><a href="#faction-bonuses">Faction Bonuses</a></li>
+                    <li><a href="#tech-tree" data-target="tech-tree-overlay">Tech Tree</a></li>
+                    <li><a href="#units" data-target="units-overlay">Units</a></li>
+                    <li><a href="#faction-bonuses" data-target="faction-bonuses-overlay">Faction Bonuses</a></li>
                 </ul>
             </nav>
 
@@ -30,6 +28,31 @@
                 <h2>The Noble House Atreides</h2>
                 <p>Placeholder text about House Atreides</p> 
             </div>
+
+            <div id="tech-tree-overlay" class="overlay">
+                <div class="overlay-content">
+                    <span class="close-button" onclick="closeOverlay('tech-tree-overlay')">×</span>
+                    <h2>Tech Tree Content</h2>
+                    <p>This is where the Atreides Tech Tree information will go.</p>
+                </div>
+            </div>
+
+            <div id="units-overlay" class="overlay">
+                <div class="overlay-content">
+                    <span class="close-button" onclick="closeOverlay('units-overlay')">×</span>
+                    <h2>Units Content</h2>
+                    <p>This is where the Atreides Units information will go.</p>
+                </div>
+            </div>
+
+            <div id="faction-bonuses-overlay" class="overlay">
+                <div class="overlay-content">
+                    <span class="close-button" onclick="closeOverlay('faction-bonuses-overlay')">×</span>
+                    <h2>Faction Bonuses Content</h2>
+                    <p>This is where the Atreides Faction Bonuses information will go.</p>
+                </div>
+            </div>
+
         </div>
     </main>
 
