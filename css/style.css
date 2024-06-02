@@ -1,0 +1,72 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em; 
+}
+
+.guide-highlight {
+    color: #bd9354; /* Dune-like gold color */
+}
+
+#main-content {
+    display: flex; 
+    min-height: calc(100vh - 80px); 
+}
+
+#house-navigation {
+    width: 250px; 
+    background-color: #181818;
+    padding: 20px;
+    position: fixed; 
+    height: 100%; 
+}
+
+#house-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#house-navigation li {
+    margin-bottom: 15px;
+}
+
+#house-navigation a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 1.2em;
+    transition: color 0.3s ease; 
+}
+
+#house-navigation a:hover {
+    color: #bd9354;
+}
+
+#content {
+    flex-grow: 1; 
+    padding: 20px;
+    margin-left: 250px;
+} 
+
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 10px;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+}

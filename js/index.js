@@ -1,48 +1,53 @@
-const houseNavigation = document.getElementById("house-navigation");
-const contentContainer = document.getElementById("content");
+document.addEventListener('DOMContentLoaded', (event) => {
+    const houseNavigationLinks = document.querySelectorAll('#house-navigation a');
+    const contentArea = document.getElementById('main-content');
 
-const houses = [
-  { name: "Atreides", href: "atreides.html" },
-  { name: "Harkonnen", href: "harkonnen.html" },
-  { name: "Smugglers", href: "smugglers.html" },
-  { name: "Fremen", href: "fremen.html" },
-  { name: "Corrino", href: "corrino.html" },
-  { name: "Ecaz", href: "ecaz.html" },
-  { name: "Vernius", href: "vernius.html" },
-];
+    // Function to load content
+    function loadContent(house) {
+        // Create a basic structure for the house page
+        contentArea.innerHTML = `
+            <div id="content"> 
+                <header>
+                    <h1>House ${house}</h1>
+                    <a href="index.html" id="home-button">Home</a>
+                </header>
+                <nav id="${house}-navigation">
+                    <ul>
+                        <li><a href="#" data-section="tech-tree">Tech Tree</a></li>
+                        <li><a href="#" data-section="units">Units</a></li>
+                        <li><a href="#" data-section="faction-bonuses">Faction Bonuses</a></li>
+                    </ul>
+                </nav>
+                <div id="${house}-content">
+                    <h2>${house} Content</h2> 
+                </div>
+            </div>
+        `;
 
-function createNavigationList() {
-  const list = document.createElement("ul");
+        // Add event listeners to the new navigation links
+        attachNavigationEvents();
+    }
 
-  houses.forEach((house) => {
-    const listItem = document.createElement("li");
-    const link = document.createElement("a");
-    link.href = house.href;
-    link.textContent = house.name;
-    listItem.appendChild(link);
-    list.appendChild(listItem);
-  });
+    // Function to attach event listeners to navigation links
+    function attachNavigationEvents() {
+        const navLinks = document.querySelectorAll('#content nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); 
+                const section = link.getAttribute('data-section');
+                // Here you'll load the content for the selected section
+                console.log(`Loading ${section} content...`);
+            });
+        });
+    }
 
-  return list;
-}
 
-function loadContent(house) {
-  // Load content for the selected house
-  fetch(house.href)
-    .then((response) => response.text())
-    .then((html) => {
-      contentContainer.innerHTML = html;
+    // Add event listeners to each house link
+    houseNavigationLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            const house = link.getAttribute('data-house');
+            loadContent(house);
+        });
     });
-}
-
-houseNavigation.appendChild(createNavigationList());
-
-// Handle navigation clicks
-houseNavigation.addEventListener("click", (event) => {
-  if (event.target.tagName === "A") {
-    const selectedHouse = houses.find(
-      (house) => house.name === event.target.textContent
-    );
-    loadContent(selectedHouse);
-  }
 });
