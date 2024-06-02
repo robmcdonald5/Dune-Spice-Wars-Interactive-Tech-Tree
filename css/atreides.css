@@ -1,0 +1,9 @@
+/* Atreides Specific Styling */
+#atreides-content {
+    text-align: center; 
+}
+
+/* Example: You can style each section later */
+#tech-tree, #units, #faction-bonuses {
+    /* Add styling for content sections */
+} 

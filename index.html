@@ -5,31 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dune Spice Wars Interactive Guide</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Dune Spice Wars <span class="guide-highlight">Interactive Guide</span></h1>
+        <div class="container"> 
+            <h1><a href="index.html">Dune Spice Wars Guide</a></h1>
+        </div>
     </header>
 
-    <main id="main-content"> 
-        <nav id="house-navigation">
-            <ul>
-                <li><a href="atreides.html" data-house="atreides">House Atreides</a></li>
-                <li><a href="#" data-house="harkonnen">House Harkonnen</a></li> 
-                <li><a href="#" data-house="smugglers">Smugglers</a></li>
-                <li><a href="#" data-house="fremen">Fremen</a></li>
-                <li><a href="#" data-house="corrino">House Corrino</a></li>
-                <li><a href="#" data-house="ecaz">House Ecaz</a></li>
-                <li><a href="#" data-house="vernius">House Vernius</a></li>
-            </ul>
-        </nav>
+    <main>
+        <div class="container">
+            <nav id="house-navigation">
+                <ul>
+                    <li><a href="atreides.html">House Atreides</a></li>
+                    <li><a href="#">House Harkonnen</a></li>
+                    <li><a href="#">The Smugglers</a></li>
+                    <li><a href="#">The Fremen</a></li>
+                    <li><a href="#">House Corrino</a></li>
+                    <li><a href="#">House Ecaz</a></li>
+                    <li><a href="#">House Vernius</a></li>
+                </ul>
+            </nav>
+            <div id="content">
+                <h2>Welcome to Arrakis</h2> 
+                <p>This interactive guide is designed to help you navigate the treacherous landscape of Dune Spice Wars. Choose your House and master the art of war, diplomacy, and subterfuge to control the spice, and thus control the universe!</p>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>© 2023 Dune Spice Wars Guide</p>
+        <div class="container">
+            <p>© 2023 Dune Spice Wars Guide</p>
+        </div>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script src="js/index.js"></script> 
 </body>
 </html>
