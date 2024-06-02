@@ -35,16 +35,19 @@ h1 {
     margin-bottom: 0; 
 }
 
+/* Navigation Styling */
 nav ul {
     list-style: none;
     padding: 0; 
-    margin: 20px 0;
+    margin: 20px auto; /* Center the navigation */
     display: flex;
-    justify-content: center; 
+    justify-content: space-around; /* Evenly distribute space around images */
+    width: 100%; /* Make sure images take up full width */
 }
 
 nav li {
-    margin: 0 5px;  /* Reduced margin for a more compact look */
+    margin: 0; /* Remove default margin */ 
+    text-align: center; /* Center images within list items */
 }
 
 nav a {
@@ -54,11 +57,16 @@ nav a {
     padding: 10px 15px; 
     border-radius: 5px; 
     transition: background-color 0.3s ease; 
-    display: block; /* Ensures proper spacing even with reduced margin */
+    display: block;
 }
 
 nav a:hover {
     background-color: #555; 
+}
+
+nav a img { 
+    max-width: 100%; /* Ensure images scale down if needed */
+    height: auto;    /* Maintain aspect ratio */
 }
 
 footer {
