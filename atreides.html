@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Atreides - Dune Spice Wars Interactive Guide</title>
     <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/overlay.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +20,7 @@
         <div class="container">
             <nav id="atreides-navigation">
                 <ul>
-                    <li><a href="#tech-tree" data-target="tech-tree-overlay">Tech Tree</a></li>
+                    <li><a href="atreides-tech-tree.html" data-target="tech-tree-overlay">Tech Tree</a></li>
                     <li><a href="#units" data-target="units-overlay">Units</a></li>
                     <li><a href="#faction-bonuses" data-target="faction-bonuses-overlay">Faction Bonuses</a></li>
                 </ul>
@@ -33,69 +34,7 @@
             <div id="tech-tree-overlay" class="overlay">
                 <div class="overlay-content">
                     <span class="close-button" onclick="closeOverlay('tech-tree-overlay')">×</span>
-                    <h2>Tech Tree</h2>
-                    <div class="tech-tree">
-                        <div class="tech-column">
-                            <div class="tech-node economy" data-tech-info="Info about Local Community">
-                                Local Community
-                            </div>
-                            <div class="tech-node economy" data-tech-info="Info about Modular Parts">
-                                Modular Parts
-                            </div>
-                            <div class="tech-node economy" data-tech-info="Info about CHOAM Integration">
-                                CHOAM Integration
-                            </div>
-                            <div class="tech-node economy" data-tech-info="Info about Atreides Foremen">
-                                Atreides Foremen
-                            </div>
-                        </div>
-                        <div class="tech-column">
-                            <div class="tech-node economy" data-tech-info="Info about Urban Planning">
-                                Urban Planning
-                            </div>
-                            <div class="tech-node economy" data-tech-info="Info about Insulated Valley">
-                                Insulated Valley
-                            </div>
-                            <div class="tech-node economy" data-tech-info="Info about CHOAM Support">
-                                CHOAM Support
-                            </div>
-                        </div>
-                        <div class="tech-column">
-                            <div class="tech-node military" data-tech-info="Info about Survival Training">
-                                Survival Training
-                            </div>
-                            <div class="tech-node military" data-tech-info="Info about Army Logistics">
-                                Army Logistics
-                            </div>
-                            <div class="tech-node military" data-tech-info="Info about Mechanization">
-                                Mechanization
-                            </div>
-                            <div class="tech-node military" data-tech-info="Info about Energy Efficiency">
-                                Energy Efficiency
-                            </div>
-                            <div class="tech-node military" data-tech-info="Info about Parts Production">
-                                Parts Production
-                            </div>
-                        </div>
-                        <div class="tech-column">
-                            <div class="tech-node authority" data-tech-info="Info about Local Dialect Studies">
-                                Local Dialect Studies
-                            </div>
-                            <div class="tech-node authority" data-tech-info="Info about Lay of the Land">
-                                Lay of the Land
-                            </div>
-                            <div class="tech-node authority" data-tech-info="Info about Air Network">
-                                Air Network
-                            </div>
-                            <div class="tech-node authority" data-tech-info="Info about Veteran Militia">
-                                Veteran Militia
-                            </div>
-                            <div class="tech-node authority" data-tech-info="Info about Border Defense">
-                                Border Defense
-                            </div>
-                        </div>
-
-                        </div>
+                    
                 </div>
             </div>
 
@@ -114,7 +53,6 @@
                     <p>This is where the Atreides Faction Bonuses information will go.</p>
                 </div>
             </div>
-
         </div>
     </main>
 
@@ -124,35 +62,6 @@
         </div>
     </footer>
 
-    <script src="js/atreides.js"></script>
-    <script>
-        // Get all tech nodes
-        const techNodes = document.querySelectorAll('.tech-node');
-
-        // Function to show tooltip
-        function showTooltip(event) {
-            const node = event.target;
-            const info = node.getAttribute('data-tech-info');
-            const tooltip = document.createElement('div');
-            tooltip.className = 'tooltip';
-            tooltip.textContent = info;
-            node.appendChild(tooltip);
-        }
-
-        // Function to hide tooltip
-        function hideTooltip(event) {
-            const node = event.target;
-            const tooltip = node.querySelector('.tooltip');
-            if (tooltip) {
-                node.removeChild(tooltip);
-            }
-        }
-
-        // Add event listeners to each node
-        techNodes.forEach(node => {
-            node.addEventListener('mouseover', showTooltip);
-            node.addEventListener('mouseout', hideTooltip);
-        });
-    </script>
+    <script src="js/atreides.js"></script> 
 </body>
 </html>

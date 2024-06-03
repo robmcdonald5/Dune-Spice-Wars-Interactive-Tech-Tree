@@ -1,0 +1,100 @@
+/* Overlay Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto; /* Enable scrolling if content is too long */
+}
+
+.overlay-content {
+    background-color: #121212;
+    margin: 2% auto;  /* Reduced top margin, auto for other sides */
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 95%; /* Wider overlay */
+    position: relative;
+    height: 95vh;   /* Taller overlay (95% viewport height) */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa; 
+}
+
+/* Tech Tree Container */
+.tech-tree-container {
+    display: flex;
+    gap: 20px;  /* Spacing between quadrants */
+}
+
+/* Tech Tree Quadrants */
+.tech-quadrant {
+    flex: 1; /* Each quadrant takes equal width */
+    border: 1px solid #6C4A4A; /* Quadrant border */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tech-quadrant h3 {
+    text-align: center; 
+    margin-bottom: 15px; 
+}
+
+/* Tech Tree Nodes */
+.tech-node {
+    width: 150px; 
+    margin: 5px 0; /* Vertical margin for spacing */
+    padding: 10px;
+    border: 2px solid #6C4A4A;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #1E1E1E;
+    color: #e2d4c7;
+    position: relative; /* For tooltip positioning */
+    cursor: pointer;
+}
+
+.tech-node.economy {
+    border-color: #C8B73A; /* Yellow */
+}
+
+.tech-node.military {
+    border-color: #C2472E; /* Red */
+}
+
+.tech-node.politics {
+    border-color: #4682B4; /* Blue */
+}
+
+.tech-node.authority {
+    border-color: #5F9E4E; /* Green */
+}
+.tooltip {
+    position: absolute;
+    top: 100%; /* Position below the tech node */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip horizontally */
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    z-index: 1001; /* Ensure tooltip is above other elements */
+    visibility: hidden; /* Tooltip is hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tech-node:hover .tooltip {
+    visibility: visible; /* Tooltip becomes visible on hover */
+    opacity: 1;
+}

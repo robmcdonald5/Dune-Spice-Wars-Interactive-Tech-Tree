@@ -1,0 +1,156 @@
+<h2>Tech Tree</h2> 
+<div class="tech-tree-container"> 
+    <div class="tech-quadrant" id="economy-quadrant">
+        <h3>Economy</h3>
+        <div class="tech-node economy" data-tech-info="Info about Local Community">
+            Local Community
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about Modular Parts" style="margin-left: 70px;"> 
+            Modular Parts
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about Urban Planning" style="margin-left: 180px;">
+            Urban Planning
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about CHOAM Integration" style="margin-left: 140px;"> 
+            CHOAM Integration
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about Atreides Foremen" style="margin-left: 210px;">
+            Atreides Foremen
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about CHOAM Support" style="margin-left: 210px;">
+            CHOAM Support
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about Insulated Valley" style="margin-left: 250px;">
+            Insulated Valley
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about Geothermal Condensers" style="margin-left: 250px;">
+            Geothermal Condensers
+        </div>
+        <div class="tech-node economy" data-tech-info="Info about Riches of Arrakis" style="margin-left: 250px;">
+            Riches of Arrakis
+        </div>
+    </div>
+
+    <div class="tech-quadrant" id="military-quadrant">
+        <h3>Military</h3> 
+        <div class="tech-node military" data-tech-info="Info about Survival Training">
+            Survival Training
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Army Logistics" style="margin-left: 70px;">
+            Army Logistics
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Mechanization" style="margin-left: 70px;">
+            Mechanization
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Post-Trauma Reintegration" style="margin-left: 70px;">
+            Post-Trauma Reintegration
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Energy Efficiency" style="margin-left: 140px;">
+            Energy Efficiency
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Parts Production" style="margin-left: 210px;">
+            Parts Production
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Parallel Training" style="margin-left: 140px;">
+            Parallel Training
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Military Propaganda" style="margin-left: 210px;">
+            Military Propaganda
+        </div>
+        <div class="tech-node military" data-tech-info="Info about Proud Liberator" style="margin-left: 210px;">
+            Proud Liberator
+        </div>
+    </div>
+
+    <div class="tech-quadrant" id="politics-quadrant">
+        <h3>Politics</h3>
+        <div class="tech-node politics" data-tech-info="Info about Atreides Sympathizers">
+            Atreides Sympathizers
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Diplomatic Maneuvers" style="margin-left: 70px;">
+            Diplomatic Maneuvers
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Spying Logistic" style="margin-left: 70px;">
+            Spying Logistic
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Political Entente" style="margin-left: 140px;">
+            Political Entente
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Landsraad Support" style="margin-left: 140px;">
+            Landsraad Support
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Insider Trading" style="margin-left: 210px;">
+            Insider Trading
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Sustainable Spying" style="margin-left: 140px;">
+            Sustainable Spying
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Active Surveillance" style="margin-left: 140px;">
+            Active Surveillance
+        </div>
+        <div class="tech-node politics" data-tech-info="Info about Spying Mastery" style="margin-left: 210px;">
+            Spying Mastery
+        </div>
+    </div>
+
+    <div class="tech-quadrant" id="authority-quadrant">
+        <h3>Authority</h3>
+        <div class="tech-node authority" data-tech-info="Info about Local Dialect Studies">
+            Local Dialect Studies
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Lay of the Land" style="margin-left: 70px;">
+            Lay of the Land
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Air Network" style="margin-left: 70px;">
+            Air Network
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Native Customs" style="margin-left: 70px;">
+            Native Customs
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Veteran Militia" style="margin-left: 140px;">
+            Veteran Militia
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Border Defense" style="margin-left: 210px;">
+            Border Defense
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Cultural Assimilation" style="margin-left: 140px;">
+            Cultural Assimilation
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Valuable Trinkets" style="margin-left: 140px;">
+            Valuable Trinkets
+        </div>
+        <div class="tech-node authority" data-tech-info="Info about Wonders of the Desert" style="margin-left: 210px;">
+            Wonders of the Desert
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get all tech nodes in this overlay
+    const techNodes = document.querySelectorAll('.tech-node');
+
+    // Function to show tooltip
+    function showTooltip(event) {
+        const node = event.target;
+        const info = node.getAttribute('data-tech-info');
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = info;
+        node.appendChild(tooltip);
+    }
+
+    // Function to hide tooltip
+    function hideTooltip(event) {
+        const node = event.target;
+        const tooltip = node.querySelector('.tooltip');
+        if (tooltip) {
+            node.removeChild(tooltip);
+        }
+    }
+
+    // Add event listeners to each node
+    techNodes.forEach(node => {
+        node.addEventListener('mouseover', showTooltip);
+        node.addEventListener('mouseout', hideTooltip);
+    });
+</script>
