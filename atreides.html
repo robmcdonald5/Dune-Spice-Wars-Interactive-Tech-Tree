@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Atreides - Dune Spice Wars Interactive Guide</title>
     <link rel="stylesheet" href="css/style.css"> 
-    <link rel="stylesheet" href="css/overlay.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,9 +19,9 @@
         <div class="container">
             <nav id="atreides-navigation">
                 <ul>
-                    <li><a href="atreides-tech-tree.html" data-target="tech-tree-overlay">Tech Tree</a></li>
-                    <li><a href="#units" data-target="units-overlay">Units</a></li>
-                    <li><a href="#faction-bonuses" data-target="faction-bonuses-overlay">Faction Bonuses</a></li>
+                    <li><a href="atreides-tech-tree.html">Tech Tree</a></li>
+                    <li><a href="#">Units</a></li>
+                    <li><a href="#">Faction Bonuses</a></li>
                 </ul>
             </nav>
 
@@ -30,38 +29,8 @@
                 <h2>The Noble House Atreides</h2>
                 <p>Placeholder text about House Atreides</p> 
             </div>
-
-            <div id="tech-tree-overlay" class="overlay">
-                <div class="overlay-content">
-                    <span class="close-button" onclick="closeOverlay('tech-tree-overlay')">×</span>
-                    
-                </div>
-            </div>
-
-            <div id="units-overlay" class="overlay">
-                <div class="overlay-content">
-                    <span class="close-button" onclick="closeOverlay('units-overlay')">×</span>
-                    <h2>Units Content</h2>
-                    <p>This is where the Atreides Units information will go.</p>
-                </div>
-            </div>
-
-            <div id="faction-bonuses-overlay" class="overlay">
-                <div class="overlay-content">
-                    <span class="close-button" onclick="closeOverlay('faction-bonuses-overlay')">×</span>
-                    <h2>Faction Bonuses Content</h2>
-                    <p>This is where the Atreides Faction Bonuses information will go.</p>
-                </div>
-            </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2023 Dune Spice Wars Guide</p>
-        </div>
-    </footer>
-
-    <script src="js/atreides.js"></script> 
 </body>
 </html>

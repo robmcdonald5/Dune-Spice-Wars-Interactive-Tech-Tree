@@ -1,0 +1,96 @@
+/* Tech Tree Styles */
+.tech-tree-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: calc(100vh - 100px);
+}
+
+.tech-quadrant {
+    width: 48%;
+    height: 50%;
+    border: 2px solid #6C4A4A;
+    border-radius: 5px;
+    margin-bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items from the top */
+    align-items: center;
+    background-color: #1E1E1E;
+    color: #e2d4c7;
+    position: relative; /* Allows for absolute positioning of children */
+    text-align: center;
+    overflow: hidden;
+}
+
+.tech-quadrant h2 {
+    margin-bottom: 10px;
+}
+
+.tech-node {
+    width: 100px; /* Reduced width */
+    margin: 5px;   /* Reduced margin */
+    padding: 8px;   /* Reduced padding */
+    border: 2px solid #6C4A4A;
+    border-radius: 5px;
+    background-color: #1E1E1E;
+    color: #e2d4c7;
+    position: absolute; /* Allows precise placement within the quadrant */
+    cursor: pointer;
+    display: flex;           /* Enable Flexbox for node content */
+    flex-direction: column;  /* Align items vertically */
+    align-items: center;      /* Center content horizontally */
+    font-size: 0.8em;      /* Reduced font size */
+    z-index: 1;             /* Ensure nodes are above lines */
+}
+
+.tech-node.economy {
+    border-color: #C8B73A; /* Yellow */
+}
+
+.tech-node.military {
+    border-color: #C2472E; /* Red */
+}
+
+.tech-node.politics {
+    border-color: #4682B4; /* Blue */
+}
+
+.tech-node.authority {
+    border-color: #5F9E4E; /* Green */
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    z-index: 1001; 
+    visibility: hidden; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tech-node:hover .tooltip {
+    visibility: visible; 
+    opacity: 1;
+}
+
+.connecting-line {
+    position: absolute;
+    background-color: #6C4A4A;
+    z-index: 0; /* Ensure lines are behind nodes */
+}
+
+.connecting-line.vertical {
+    width: 2px;
+}
+
+.connecting-line:not(.vertical) {
+    height: 2px;
+}
